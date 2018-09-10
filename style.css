@@ -2,6 +2,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: myFirstFont;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/Sansation-Regular.ttf);
 }
 
 body {
@@ -48,15 +54,6 @@ body {
   border-radius: 12px;
   color: #121296;
   cursor: pointer;
-}
-
-@font-face {
-  font-family: myFirstFont;
-  src: url(Sansation-Regular.ttf);
-}
-
-* {
-  font-family: myFirstFont;
 }
 
 .memory-game {
