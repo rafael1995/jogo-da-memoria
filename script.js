@@ -21,9 +21,9 @@ let listaCartas = [
   {nome: 'Vasco', img: 'img/vasco.png'},
   {nome: 'Vitoria', img: 'img/vitoria.png'}
 ]
-let lockBoard = false
+let auxBlock = false
 let firstCard, secondCard
-let hasFlippedCard = false
+let cartaVirada = false
 let acertos = 0
 let level, jogador
 let tempo = 0
@@ -71,7 +71,7 @@ function emitSound (result) {
 }
 
 function unflipCards () {
-  lockBoard = true
+  auxBlock = true
   setTimeout(() => {
     firstCard.classList.remove('vira')
     secondCard.classList.remove('vira')
@@ -81,7 +81,7 @@ function unflipCards () {
 }
 
 function resetBoard () {
-  [hasFlippedCard, lockBoard] = [false, false]
+  [cartaVirada, auxBlock] = [false, false]
   [firstCard, secondCard] = [null, null]
 }
 
@@ -137,7 +137,7 @@ function embaralha () {
   listPlayers = orderRecords(listPlayers)
   const firstPlayer = listPlayers[0]
   if (firstPlayer) {
-    document.getElementById('recorde').innerHTML = '<br> Melhor Pontuador: <br>' + '<b>' + firstPlayer.nome + '</b> <br>' + '  tentativas:' + firstPlayer.tentativas + ' tempo:' + firstPlayer.tempo
+    document.getElementById('recorde').innerHTML = '<br> Melhor Pontuador: <br>' + '<b>' + firstPlayer.nome + '</b> <br>' + '  tentativas:' + firstPlayer.tentativas + ' tempo: ' + firstPlayer.tempo + ' segundos'
   }
 })()
 function orderRecords (listPlayers) {
@@ -161,12 +161,12 @@ function contGame () {
   document.getElementById('cronometro').innerHTML = tempo
 }
 function virar () {
-  if (lockBoard) return
+  if (auxBlock) return
   if (this === firstCard) return
   this.classList.add('vira')
-  if (!hasFlippedCard) {
+  if (!cartaVirada) {
     // first click
-    hasFlippedCard = true
+    cartaVirada = true
     firstCard = this
 
     return
