@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="form-start" class="start">
+    <h1> Bem vindo! </h1>
+    <br>
+    <form onsubmit="return startGame(this)">
+      <span> Informe o seu nome </span> <br> <br>
+      <input type="text" name="jogador" /> <br> <br>
+      <span class="label-nivel"> Selecione um Nivel </span> <br> <br>
+      
+      <div class="niveis">
+        <input type="radio" name="nivel" value="12"> Fácil <br>
+        <input type="radio" name="nivel" value="20"> Médio <br>
+        <input type="radio" name="nivel" value="36">Difícil<br><br>
+        <input type="submit" name="start" value="Iniciar">
+      </div>
+    </form>
+    <br>
+    <div class="placares">
+      <h2>Histórico</h2> <br>
+      <div id="listPlayers">
+
+      </div>
+    </div>
+    
+  </div>
+  <div id="placar" class="time">
+    <div id="cronometro" class="cronometro"></div>
+    <div id="recorde"></div>
+  </div>
+  <section id="all-cards" class="memory-game">
+  </section>
+
+  <script src="script.js"></script>
+  <audio id="audioAcerto" src="som/correct.mp3" autostart="false" ></audio>
+  <audio id="audioErro" src="som/error.mp3" autostart="false" ></audio>
+</body>
+</html>

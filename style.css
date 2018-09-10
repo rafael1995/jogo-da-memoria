@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #060AB2;
+}
+.start {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 20%;
+  color: #fff;
+  text-align: center
+}
+.time {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+}
+.cronometro {
+  font-size: 40px;
+}
+.placares {
+  border: solid 1px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 350px;
+}
+.start h1 {
+  font-size: 50px;
+}
+.start input[type=submit] {
+  background-color: #ffff;
+  height: 40px;
+  width: 80px;
+  font-size: 20px;
+  border-radius: 12px;
+  color: #121296;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(Sansation-Regular.ttf);
+}
+
+* {
+  font-family: myFirstFont;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.carta {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.carta:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.carta.vira {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
